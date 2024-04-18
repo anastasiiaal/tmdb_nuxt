@@ -3,8 +3,8 @@
     <div class="container">
 
         <div class="filter-wrapper flex gap-3 mb-10">
-            <button v-for="item in menu" class="filter bg-black py-2 px-4 text-snow opacity-90 hover:opacity-100 radius-sm uppercase text-xs" @click="getFilteredMovies(item)">
-                {{ item }}
+            <button v-for="{name, param} in menu" class="filter bg-black py-2 px-4 text-snow opacity-90 hover:opacity-100 radius-sm uppercase text-xs" @click="getFilteredMovies(param)">
+                {{ name }}
             </button>
         </div>
 
@@ -26,13 +26,23 @@
     const { getMovies } = useTmdb();
     const movies = ref([]);
 
-    const menu = ["upcoming", "popular", "top_rated", "now_playing"]
+    const menu = [
+        { name: 'Bientôt', param: 'upcoming'},
+        { name: 'Populaires', param: 'popular'},
+        { name: 'Meilleure note', param: 'top_rated'},
+        { name: 'A la une', param: 'now_playing'},
+    ]
 
     movies.value = await getMovies('upcoming');
 
     async function getFilteredMovies (param) {
         movies.value = await getMovies(param);
     }
+
+    onMounted(() => {
+            getFilteredMovies('upcoming')
+        }
+    )
 
 </script>
 
