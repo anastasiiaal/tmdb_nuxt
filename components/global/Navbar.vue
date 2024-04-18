@@ -1,7 +1,7 @@
 <template>
     <ul>
-        <li v-for="{ name, path } in menu" :key="link.path">
-            <a :href="path">{{ name }}</a>
+        <li v-for="{ name, path } in menu" :key="path">
+            <NuxtLink :to="path">{{ name }}</NuxtLink>
         </li>
     </ul>
 </template>
@@ -15,3 +15,9 @@
     ]
 
 </script>
+
+<style scoped>
+    .router-link-exact-active {
+        background-color: violet;
+    }
+</style>
