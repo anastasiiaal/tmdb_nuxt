@@ -19,10 +19,10 @@
 
 <script setup>
 
-    const { getMowPlayingMovies } = useTmdb();
+    const { getMovies } = useTmdb();
     const movies = ref([]);
 
-    movies.value = await getMowPlayingMovies();
+    movies.value = await getMovies('now_playing');
 
 </script>
 

@@ -1,7 +1,8 @@
 export const useTmdb = () => {
     const config = useRuntimeConfig()
 
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?language=fr-FR&page=1';
+    const baseUrl = 'https://api.themoviedb.org/3';
+    const queryParams = '?language=fr-FR&page=1';
     const options = {
         method: 'GET',
         headers: {
@@ -10,10 +11,10 @@ export const useTmdb = () => {
         }
     };
 
-    async function getMowPlayingMovies() {
-        const response = await $fetch(url, options);    // $fetch() == fetch() plus puissant de nuxt
+    async function getMovies(params : string) {
+        const response = await $fetch(baseUrl + '/movie/' + params + queryParams , options);    // $fetch() == fetch() plus puissant de nuxt
         return response
     }
 
-    return { getMowPlayingMovies }
+    return { getMovies }
 }
