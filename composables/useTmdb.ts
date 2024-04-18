@@ -3,7 +3,6 @@ export const useTmdb = () => {
 
     const baseUrl = 'https://api.themoviedb.org/3';
     const queryParams = '?language=fr-FR&page=1';
-    const queryParamsSingle = '?append_to_response=videos&language=fr-FR';
 
     const options = {
         method: 'GET',
@@ -18,10 +17,10 @@ export const useTmdb = () => {
         return response.results
     }
 
-    async function getMovie(id : number) {
-        const response = await $fetch(baseUrl + '/movie/' + id + queryParamsSingle, options)
+    async function getMovieById(id, append) {
+        const response = await $fetch(baseUrl + '/movie/' + id + queryParams + `&append_to_response=${append}`, options);
         return response
     }
 
-    return { getMovies, getMovie }
+    return { getMovies, getMovieById }
 }
