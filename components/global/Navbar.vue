@@ -1,5 +1,5 @@
 <template>
-    <ul>
+    <ul class="bg-slate-800 text-white">
         <li v-for="{ name, path } in menu" :key="path">
             <NuxtLink :to="path">{{ name }}</NuxtLink>
         </li>
@@ -18,6 +18,6 @@
 
 <style scoped>
     .router-link-exact-active {
-        background-color: violet;
+        @apply text-primary;
     }
 </style>
