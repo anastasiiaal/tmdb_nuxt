@@ -25,11 +25,12 @@
             <h2>Vidéos</h2>
 
         </div>
-        <div class="text-snow flex gap-4 overflow-x-auto"> 
+
+        <Wrapper display="carrousel">
             <div v-for="trailer in trailers">
                 <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${trailer.id}`" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        </div>
+        </Wrapper>
     </section>
     
     <!--

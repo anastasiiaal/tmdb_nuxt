@@ -19,6 +19,8 @@
     </div>
 </section>
 
+<!--
+
 <hr>
 
 <br>
@@ -45,7 +47,7 @@
                     Find out more
                 </a>
             </div>
-            <!-- Overlay -->
+            
             <div class="absolute h-full w-full z-10 inset-0 overlay-bg opacity-0 group-hover:opacity-100">
             </div>
             <img class="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity duration-300 ease-out group-hover:opacity-100 group-hover:transition-opacity group-hover:duration-300"
@@ -56,7 +58,7 @@
     </article>
 
 </div>
-
+-->
 
 </template>
 
