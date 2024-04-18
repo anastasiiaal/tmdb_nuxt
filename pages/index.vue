@@ -1,8 +1,12 @@
 <template>
+<section>
+    <div class="container">
 
-home
-
-<pre>{{ filmData }}</pre>
+        home
+        
+        <pre>{{ filmData }}</pre>
+    </div>
+</section>
 </template>
 
 <script setup>
@@ -28,3 +32,17 @@ home
     });
 
 </script>
+
+<style>
+    body {
+        @apply bg-snow;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    section, .section {
+        padding: 70px 0;
+    }
+</style>

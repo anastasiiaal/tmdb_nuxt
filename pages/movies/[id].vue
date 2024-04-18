@@ -1,5 +1,11 @@
 <template>
-movie single ID {{ params.id  }}
+    <section>
+    <div class="container">
+
+        movie single ID {{ params.id  }}
+    </div>
+</section>
+
 </template>
 
 <script setup>
