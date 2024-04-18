@@ -7,9 +7,11 @@
                 <div class="text-wrapper self-center">
                     <h1 class="mb-2">{{ movie.title }}</h1>
                     <p>{{ movie.overview }}</p>
+                    <!--
                     <button class="mt-5 py-3 px-5 bg-primary hover:bg-red-700 font-semibold cursor-pointer">
                         Voir les trailers
                     </button>
+                    -->
                 </div>
                 <div class="note self-top">
                     <h1>{{ movie.vote_average }}<span>/10</span></h1>
@@ -18,17 +20,18 @@
         </div>
     </section>
 
-    <section v-if="trailers">
+    <section v-if="trailers && trailers.length > 0">
         <div class="container">
             <h2>Vidéos</h2>
 
-            <div class="text-snow flex gap-4 overflow-x-auto"> 
-                <div v-for="trailer in trailers">
-                    <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${trailer.id}`" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+        </div>
+        <div class="text-snow flex gap-4 overflow-x-auto"> 
+            <div v-for="trailer in trailers">
+                <iframe width="560" height="315" :src="`https://www.youtube.com/embed/${trailer.id}`" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </section>
+    
     <!--
     <section>
         <div class="container">
