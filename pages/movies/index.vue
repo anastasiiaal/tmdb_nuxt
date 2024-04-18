@@ -2,16 +2,20 @@
 <section>
     <div class="container">
 
-        Movies index
-        
-        <div class="card flex flex-col h-[300px] w-[250px] bg-slate-500">
-            <img src="" alt="">
-            <h3>Title</h3>
-
+        <div class="filter-wrapper flex gap-3 mb-10">
+            <button v-for="item in menu" class="filter bg-black py-2 px-4 text-snow opacity-90 hover:opacity-100 radius-sm uppercase text-xs" @click="getFilteredMovies(item)">
+                {{ item }}
+            </button>
         </div>
-        <!--
-        -->
-        <pre>{{ movies }}</pre>
+
+        <div class="movies-wrapper">
+            <a v-for="movie in movies" class="movie_card" :href="/movies/ + movie.id">
+                <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :alt="movie.title">
+                <div class="text-wrapper p-4">
+                    <h3>{{ movie.title }}</h3>
+                </div>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -22,7 +26,13 @@
     const { getMovies } = useTmdb();
     const movies = ref([]);
 
-    movies.value = await getMovies('now_playing');
+    const menu = ["upcoming", "popular", "top_rated", "now_playing"]
+
+    movies.value = await getMovies('upcoming');
+
+    async function getFilteredMovies (param) {
+        movies.value = await getMovies(param);
+    }
 
 </script>
 

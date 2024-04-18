@@ -13,7 +13,7 @@ export const useTmdb = () => {
 
     async function getMovies(params : string) {
         const response = await $fetch(baseUrl + '/movie/' + params + queryParams , options);    // $fetch() == fetch() plus puissant de nuxt
-        return response
+        return response.results
     }
 
     return { getMovies }
