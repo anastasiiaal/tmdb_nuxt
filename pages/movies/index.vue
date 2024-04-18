@@ -8,14 +8,14 @@
             </button>
         </div>
 
-        <div class="movies-wrapper">
+        <Wrapper display="grid">
             <a v-for="movie in movies" class="movie_card" :href="/movies/ + movie.id">
                 <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :alt="movie.title">
                 <div class="text-wrapper p-4">
                     <h3>{{ movie.title }}</h3>
                 </div>
             </a>
-        </div>
+        </Wrapper>
     </div>
 </section>
 

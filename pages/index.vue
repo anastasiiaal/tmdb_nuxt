@@ -33,7 +33,7 @@
     }
 
     .movie_card {
-        @apply flex flex-col w-[200px] bg-black text-snow;
+        @apply flex flex-col bg-black text-snow;
     }
 
     .movie_card img {
