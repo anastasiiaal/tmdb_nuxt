@@ -7,6 +7,9 @@
                 <div class="text-wrapper self-center">
                     <h1 class="mb-2">{{ movie.title }}</h1>
                     <p>{{ movie.overview }}</p>
+                    <button class="mt-5 py-3 px-5 bg-primary hover:bg-primary-600 font-semibold cursor-pointer">
+                        Voir le trailer
+                    </button>
                 </div>
                 <div class="note self-top">
                     <h1>8.99<span>/10</span></h1>
@@ -37,7 +40,7 @@
 <style scoped>
 
     section {
-        @apply bg-black text-snow;
+        @apply text-snow;
     }
 
     section#poster { 
