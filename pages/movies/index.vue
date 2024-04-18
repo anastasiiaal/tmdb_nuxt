@@ -19,25 +19,10 @@
 
 <script setup>
 
-    const config = useRuntimeConfig()
+    const { getMowPlayingMovies } = useTmdb();
     const movies = ref([]);
 
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${config.public.tmdbKey}`
-        }
-    };
-
-    async function getMowPlayingMovies() {
-        const response = await $fetch(url, options);    // $fetch() == fetch() plus puissant de nuxt
-        movies.value = response.results;
-    }
-
-    getMowPlayingMovies()
-
+    movies.value = await getMowPlayingMovies();
 
 </script>
 
