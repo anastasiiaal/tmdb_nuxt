@@ -16,5 +16,10 @@ export const useTmdb = () => {
         return response.results
     }
 
-    return { getMovies }
+    async function getMovie(id : number) {
+        const response = await $fetch(baseUrl + '/movie/' + id, options)
+        return response
+    }
+
+    return { getMovies, getMovie }
 }

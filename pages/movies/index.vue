@@ -19,6 +19,8 @@
     </div>
 </section>
 
+<pre>{{ movies }}</pre>
+
 </template>
 
 <script setup>
@@ -32,8 +34,6 @@
         { name: 'Meilleure note', param: 'top_rated'},
         { name: 'A la une', param: 'now_playing'},
     ]
-
-    movies.value = await getMovies('upcoming');
 
     async function getFilteredMovies (param) {
         movies.value = await getMovies(param);
